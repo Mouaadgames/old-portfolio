@@ -1,3 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #000;
+  background-color: #111;
+}
+
+header {
+  height: 100vh;
+  height: 100svh;
+}
+
+.name-role {
+  position: relative;
+  top: 30vh;
+  transform: translate(0%, -50%);
+  display: inline-block;
+  width: 45vw;
+  padding: 0px 50px;
+}
+
+.welcom-msg {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5em;
+  color: #fff;
+}
+
+.name-role-text {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 2.5em;
+  color: #fff;
 }
