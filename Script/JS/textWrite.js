@@ -42,7 +42,8 @@ function writeText() { // this fun will start the writing prosses
             if (writePos === 0) { // do we finish the expretion ?
                 blink("█")
                 setTimeout(() => {
-                    // debugger
+                    textIsShowing = ``
+                    name_role.textContent = textIsShowing
                     WriteNextLetter()
                 }, 1000)
             }

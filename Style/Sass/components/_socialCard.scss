@@ -1,0 +1,49 @@
+@use "../abstracts/" as *;
+
+.socialHolder {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+}
+
+.socialHolder::before {
+    content: "";
+    background-color: #D11EFF;
+    position: relative;
+    z-index: -2;
+    top: 25vh;
+    width: 60px;
+    height: 50vh;
+    border-radius: 15px 0 0 15px;
+}
+
+.socialIconHolder {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25vh;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+}
+
+.socialIcon {
+    position: relative;
+    height: 3em;
+    width: 3em;
+}
+
+.socialIconHolder a::before {
+    position: absolute;
+    content: "";
+    z-index: 0;
+    background-color: #D2D2D2;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    
+}
+
+// animation ??

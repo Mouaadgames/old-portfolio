@@ -3,41 +3,12 @@
   padding: 0;
 }
 
-body {
-  background-color: #111;
-  height: 200vh;
-}
-
-header {
-  position: relative;
-}
-
-.name-role {
-  position: absolute;
-  top: 30vh;
-  width: 45vw;
-  display: inline-block;
-  margin-left: clamp(10px, 13vw, 100px);
-}
-
-.welcom-msg {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2.5em;
-  color: #fff;
-}
-
-.name-role-text {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bolder;
-  font-size: 2.5em;
-  color: #fff;
-}
-
 .contact-me-1 {
   position: absolute;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   top: 14px;
   right: 15px;
-  background-color: orange;
+  background-color: #FF8000;
   height: 3.5em;
   width: 9rem;
   border-radius: 7px;
@@ -56,9 +27,9 @@ header {
 
 .socialHolder::before {
   content: "";
-  background-color: #cfc4d4;
+  background-color: #D11EFF;
   position: relative;
-  z-index: -1;
+  z-index: -2;
   top: 25vh;
   width: 60px;
   height: 50vh;
@@ -79,4 +50,76 @@ header {
   position: relative;
   height: 3em;
   width: 3em;
+}
+
+.socialIconHolder a::before {
+  position: absolute;
+  content: "";
+  z-index: 0;
+  background-color: #D2D2D2;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+}
+
+header {
+  position: relative;
+}
+
+.name-role {
+  position: absolute;
+  top: 30vh;
+  width: 45vw;
+  display: inline-block;
+  margin-left: clamp(10px, 13vw, 100px);
+}
+
+.welcom-msg {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5em;
+  color: #F5F5F5;
+}
+
+.name-role-text {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 2.5em;
+  color: #F5F5F5;
+}
+
+.first-bg {
+  position: absolute;
+  z-index: -10;
+  height: 100vh;
+  width: 100vw;
+}
+
+.goDown {
+  position: absolute;
+  background-color: aqua;
+  right: 2em;
+  top: 80vh;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+.goDown img {
+  position: absolute;
+  width: 2em;
+  top: 0.25em;
+  left: 0.25em;
+}
+.goDown div {
+  position: relative;
+  right: 5.5em;
+  top: 0.75em;
+  width: 100px;
+  color: white;
+  font-weight: 800;
+}
+
+.scrole {
+  position: absolute;
+  width: 40px;
+  box-shadow: 0 0 0 10px #C1D82F;
 }
