@@ -2,6 +2,7 @@
 
 .socialHolder {
     position: absolute;
+    z-index: -2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +11,8 @@
 
 .socialHolder::before {
     content: "";
-    background-color: #D11EFF;
+    background-color: #d21eff9a;
+    box-shadow: #f5f5f554 -10px 4px 64px -10px;
     position: relative;
     z-index: -2;
     top: 25vh;
@@ -27,23 +29,45 @@
     justify-content: space-evenly;
     align-items: center;
     height: 50vh;
+
+    a::before {
+        position: absolute;
+        content: "";
+        z-index: 0;
+        background-color: #43BFDA;
+        border-radius: 50%;
+        width: 3em;
+        height: 3em;
+        transform: scale(0);
+        /* Hide the pseudo-element by scaling it to zero width */
+        transition: 0.3s ease-in-out;
+        /* Add a transition effect */
+    }
+
+    a::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-color: #D2D2D2;
+        border-radius: 50%;
+        left: 0;
+        width: 3em;
+        height: 3em;
+
+    }
+
+    a:hover::before {
+        transform: scale(1);
+        background-color: #43BFDA;
+
+    }
+
 }
+
+
 
 .socialIcon {
     position: relative;
     height: 3em;
     width: 3em;
 }
-
-.socialIconHolder a::before {
-    position: absolute;
-    content: "";
-    z-index: 0;
-    background-color: #D2D2D2;
-    border-radius: 50%;
-    width: 3em;
-    height: 3em;
-    
-}
-
-// animation ??

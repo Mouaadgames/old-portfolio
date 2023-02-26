@@ -3,22 +3,69 @@
   padding: 0;
 }
 
+body {
+  background-color: #1A1A1A;
+  height: 2100vh;
+}
+
 .contact-me-1 {
   position: absolute;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   top: 14px;
   right: 15px;
   background-color: #FF8000;
-  height: 3.5em;
-  width: 9rem;
-  border-radius: 7px;
   font-size: large;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), -2px -2px 8px rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-me-1:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  transform: translateY(-2px);
+  /* Add a slight upward movement */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about .resume-button {
+  position: absolute;
+  right: 0em;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #643BBA;
+  font-size: large;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.about .resume-button:hover {
+  background-color: #0056b3;
+  /* Darker blue on hover */
+  transform: translate(-50%, calc(-50% - 4px));
+  /* Add a slight upward movement */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .socialHolder {
   position: absolute;
+  z-index: -2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +74,8 @@
 
 .socialHolder::before {
   content: "";
-  background-color: #D11EFF;
+  background-color: rgba(210, 30, 255, 0.6039215686);
+  box-shadow: rgba(245, 245, 245, 0.3294117647) -10px 4px 64px -10px;
   position: relative;
   z-index: -2;
   top: 25vh;
@@ -45,6 +93,33 @@
   align-items: center;
   height: 50vh;
 }
+.socialIconHolder a::before {
+  position: absolute;
+  content: "";
+  z-index: 0;
+  background-color: #43BFDA;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  transform: scale(0);
+  /* Hide the pseudo-element by scaling it to zero width */
+  transition: 0.3s ease-in-out;
+  /* Add a transition effect */
+}
+.socialIconHolder a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: #D2D2D2;
+  border-radius: 50%;
+  left: 0;
+  width: 3em;
+  height: 3em;
+}
+.socialIconHolder a:hover::before {
+  transform: scale(1);
+  background-color: #43BFDA;
+}
 
 .socialIcon {
   position: relative;
@@ -52,17 +127,19 @@
   width: 3em;
 }
 
-.socialIconHolder a::before {
-  position: absolute;
-  content: "";
-  z-index: 0;
-  background-color: #D2D2D2;
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
+@keyframes scroleUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
-
 header {
+  height: 100vh;
   position: relative;
 }
 
@@ -91,7 +168,7 @@ header {
   position: absolute;
   z-index: -10;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .goDown {
@@ -102,12 +179,14 @@ header {
   width: 2.5em;
   height: 2.5em;
   border-radius: 50%;
+  cursor: pointer;
 }
 .goDown img {
   position: absolute;
   width: 2em;
   top: 0.25em;
   left: 0.25em;
+  transition: 300ms ease-in-out;
 }
 .goDown div {
   position: relative;
@@ -117,9 +196,117 @@ header {
   color: white;
   font-weight: 800;
 }
+.goDown img:hover {
+  transform: scale(0.9) rotate(20deg);
+}
 
 .scrole {
   position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 40px;
-  box-shadow: 0 0 0 10px #C1D82F;
+  filter: invert(100%);
+  animation: scroleUpDown 2s linear infinite;
+}
+
+.about {
+  padding-inline: 5vw;
+  padding-block: 40px;
+  margin-top: 70px;
+  background-color: #150F1E;
+  position: relative;
+}
+.about .title {
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: 600;
+  top: 0;
+  left: 0;
+  padding: 10px 40px;
+  border-radius: 0 15px 15px 0px;
+  transform: translate(0, -50%);
+  color: #F5F5F5;
+  background-color: #643BBA;
+}
+.about .about-me {
+  color: #F5F5F5;
+  max-width: 60vw;
+}
+
+.my-skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5em;
+}
+.my-skills-container .my-skills-h3 {
+  display: inline;
+  font-size: large;
+  background: linear-gradient(to right, #31C1FF, #5424B8, #DE19BF, #FF0E0E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.my-skills-container .what-IDo {
+  color: #F5F5F5;
+  font-size: 2em;
+  text-align: center;
+}
+.my-skills-container .my-skills {
+  width: 80vw;
+  background: radial-gradient(ellipse farthest-corner at top right, #4E3314 -10%, rgba(14, 14, 14, 0.537254902) 20%, rgba(23, 23, 23, 0.1882352941) 50%, rgba(103, 103, 103, 0.1098039216));
+  max-width: 80vw;
+  -webkit-padding-after: 50px;
+          padding-block-end: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.my-skills-container .my-skills .skill-card {
+  min-width: 200px;
+  margin-top: 50px;
+  color: #F5F5F5;
+  flex: 1;
+}
+.my-skills-container .my-skills .skill-card .title-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.my-skills-container .my-skills .skill-card .title-section ::before {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: white;
+  top: 50px;
+  left: 10%;
+  transform: translate(5%, 0%);
+}
+.my-skills-container .my-skills .skill-card .title-section img {
+  width: 45px;
+}
+.my-skills-container .my-skills .skill-card .title-section .section-title {
+  font-size: larger;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.my-skills-container .my-skills .skill-card .skills-place {
+  width: 70%;
+  margin-left: 15%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.my-skills-container .my-skills .skill-card .skills-place .skill-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.my-skills-container .my-skills .skill-card .skills-place .skill-row img {
+  width: 40px;
 }

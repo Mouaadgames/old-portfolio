@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.about {
+    padding-inline: 5vw;
+    padding-block: 40px;
+    margin-top: 70px;
+    background-color: #150F1E;
+    position: relative;
+
+    .title {
+        position: absolute;
+        font-size: 1.5em;
+        font-weight: 600;
+        top: 0;
+        left: 0;
+        padding: 10px 40px;
+        border-radius: 0 15px 15px 0px;
+        transform: translate(0, -50%);
+        color: $color-primiry-text;
+        background-color: #643BBA;
+    }
+
+    .about-me {
+        color: $color-primiry-text;
+        max-width: 60vw;
+    }
+}

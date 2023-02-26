@@ -1,0 +1,93 @@
+@use "../abstracts" as *;
+
+.my-skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+
+    .my-skills-h3 {
+        display: inline;
+        font-size: $font-size-secondair;
+        background: linear-gradient(to right, #31C1FF, #5424B8, #DE19BF, #FF0E0E);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .what-IDo {
+        color: $color-primiry-text ;
+        font-size: $font-size-section-title;
+        text-align: center;
+
+    }
+
+    .my-skills {
+        width: 80vw;
+        background: radial-gradient(ellipse farthest-corner at top right, #4E3314 -10%, #0E0E0E89 20%, #17171730 50%, #6767671c);
+        max-width: 80vw;
+        padding-block-end: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+
+        .skill-card {
+            min-width: 200px;
+            margin-top: 50px;
+            color: $color-primiry-text;
+            flex: 1;
+
+            .title-section {
+                position: relative;
+
+                ::before {
+                    position: absolute;
+                    content: "";
+                    width: 80%;
+                    height: 2px;
+                    background-color: white;
+                    top: 50px;
+                    left: 10%;
+                    transform: translate(5%, 0%);
+                }
+
+                img {
+                    width: 45px;
+                }
+
+                .section-title {
+                    font-size: larger;
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                }
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 25px;
+            }
+
+            .skills-place {
+
+                width: 70%;
+                margin-left: 15%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                .skill-row {
+
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+
+                    img {
+                        width: 40px
+                    }
+                }
+            }
+        }
+    }
+
+}
