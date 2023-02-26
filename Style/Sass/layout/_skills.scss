@@ -77,12 +77,42 @@
                 gap: 15px;
 
                 .skill-row {
-
+                    font-weight: bolder;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     display: flex;
-                    gap: 15px;
+
                     align-items: center;
 
+                    .css-icon {
+                        transform: translate(7px, 3px) rotate(18deg);
+                        position: absolute;
+                        z-index: 2;
+                    }
+
+                    .html-icon {
+                        transform: translate(-14px) rotate(-14deg);
+                        position: absolute;
+                    }
+
+                    .react-native {
+                        width: 50px;
+                        transform: translate(-5px);
+                        margin-right: 5px;
+                    }
+
+                    .skill-icon {
+                        width: 40px;
+                        height: 40px;
+                        position: relative;
+                        margin-right: 15px;
+                    }
+
+                    .my-sql {
+                        filter: contrast(0) brightness(100);
+                    }
+
                     img {
+                        margin-right: 15px;
                         width: 40px
                     }
                 }
